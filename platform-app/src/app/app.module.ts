@@ -1,18 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { DetailsComponent } from './details/details.component';
 import { TodoComponent } from './todo/todo.component';
+import { NavComponent } from './nav/nav.component';
+
+import { AppRoutingModule } from './app-routing.module';
+import { PersonListComponent } from './person-list/person-list.component';
+import { PersonDetailsComponent } from './person-details/person-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DetailsComponent,
-    TodoComponent
+    TodoComponent,
+    NavComponent,
+    PersonListComponent,
+    PersonDetailsComponent
   ],
   imports: [
     BrowserModule,
