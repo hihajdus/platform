@@ -3,3 +3,10 @@
 	details
 </a>
 <p>person id</p>
+
+<div *ngFor="let person of persons$ | async" class="container">
+	<a routerLink="/user/:id">
+		<h2>{{person.name}}</h2>
+		<P>{{person.position}}</P>
+	</a>
+</div>
