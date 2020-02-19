@@ -1,12 +1,5 @@
-<p>person-list works!</p>
-<a routerLink="/person/:id">
-	details
-</a>
-<p>person id</p>
-
 <div *ngFor="let person of persons$ | async" class="container">
-	<a routerLink="/user/:id">
-		<h2>{{person.name}}</h2>
-		<P>{{person.position}}</P>
-	</a>
+	<h2>{{person.name}}</h2>
+	<P>{{person.position}}</P>
+	<a routerLink="/person/:id">details</a>
 </div>

@@ -1,3 +1,4 @@
+import { PersonsService } from './../services/persons.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./person-details.component.scss']
 })
 export class PersonDetailsComponent implements OnInit {
+  persons$;
 
-  constructor() { }
+  constructor(public personsService: PersonsService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.persons$ = this.personsService.getPerson();
   }
 
 }
