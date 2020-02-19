@@ -1,4 +1,6 @@
 <p>person-details works!</p>
-<p>person id</p>
-<p>person name</p>
-<p>person position</p>
+<div *ngFor="let person of persons$ | async" class="container">
+	<p>{{person.id}}</p>
+	<h2>{{person.name}}</h2>
+	<h4>{{person.position}}</h4>
+</div>

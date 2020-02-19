@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { tap, repeat } from 'rxjs/operators';
 
@@ -23,7 +23,7 @@ export class PersonsService {
       );
   }
 
-  getPerson() {
-
+  getPerson(){
+    return of(this.http.get(`/api/person/${this.persons$}`));
   }
 }
