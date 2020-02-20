@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { tap, repeat } from 'rxjs/operators';
 
@@ -7,11 +6,9 @@ import { tap, repeat } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PersonsService {
-  persons$: Observable<any> = this.get();
-
   constructor(private http: HttpClient) { }
 
-  get() {
+  getPersons() {
     let id = 0;
     return this.http.get(`/api/person`)
       .pipe(
@@ -23,7 +20,7 @@ export class PersonsService {
       );
   }
 
-  getPerson(){
-    return of(this.http.get(`/api/person/${this.persons$}`));
+  getPerson(id){
+    return this.http.get(`/api/person/`,{params: {id}});
   }
 }

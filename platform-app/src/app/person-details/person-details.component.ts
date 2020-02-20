@@ -1,5 +1,7 @@
 import { PersonsService } from './../services/persons.service';
 import { Component, OnInit } from '@angular/core';
+import { ActionSequence } from 'protractor';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-person-details',
@@ -7,12 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./person-details.component.scss']
 })
 export class PersonDetailsComponent implements OnInit {
-  persons$;
+  person$;
 
-  constructor(public personsService: PersonsService) { }
+  constructor(
+    public personsService: PersonsService,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit() {
-    this.persons$ = this.personsService.getPerson();
+    const id = this.route.snapshot.paramMap.get(`id`);
+    this.person$ = this.personsService.getPerson(id);
   }
 
 }
