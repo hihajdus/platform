@@ -1,6 +1,5 @@
 import { PersonsService } from './../services/persons.service';
 import { Component, OnInit } from '@angular/core';
-import { ActionSequence } from 'protractor';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,11 +12,10 @@ export class PersonDetailsComponent implements OnInit {
 
   constructor(
     public personsService: PersonsService,
-    private route: ActivatedRoute
-    ) { }
+    private router: ActivatedRoute) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get(`id`);
+    const id = this.router.snapshot.paramMap.get(`id`);
     this.person$ = this.personsService.getPerson(id);
   }
 

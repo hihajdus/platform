@@ -25,5 +25,11 @@
 			"name": "Jesica",
 			"position": "Manager"
 		}
+	],
+	"login": [
+		{
+			"email": "email",
+			"password": "password"
+		}
 	]
 }

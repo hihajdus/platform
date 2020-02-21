@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,20 +10,33 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  @Input() profileForm: FormGroup = new FormGroup({
-    username: new FormControl('username'),
-    password: new FormControl('password')
-  });
+
+  @Input()
+    profileForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
 
   constructor(
-  ) {
-
-  }
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
     console.log('submit');
+    const val = this.profileForm.value;
+
+    if (val.email && val.password) {
+      this.authService.getLogin(val.email, val.password)
+        .subscribe(
+          () => {
+            console.log("You are logged");
+            this.router.navigateByUrl('/persons');
+          }
+        )
+    }
   }
 }
