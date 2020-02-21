@@ -1,5 +1,4 @@
 <div *ngFor="let person of persons$ | async" class="container">
 	<h2>{{person.name}}</h2>
-	<P>{{person.position}}</P>
 	<a routerLink="/person/{{person.id}}">details</a>
 </div>
