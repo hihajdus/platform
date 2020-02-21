@@ -25,12 +25,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
+  login() {
     console.log('submit');
     const val = this.profileForm.value;
 
     if (val.email && val.password) {
-      this.authService.getLogin(val.email, val.password)
+      this.authService.login(val.email, val.password)
         .subscribe(
           () => {
             console.log("You are logged");

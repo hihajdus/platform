@@ -28,8 +28,14 @@
 	],
 	"login": [
 		{
-			"email": "email",
-			"password": "password"
+			"email": "email@gmail.com",
+			"password": "pass"
+		}
+	],
+	"users": [
+		{
+			"email": "email@gmail.com",
+			"password": "pass"
 		}
 	]
 }

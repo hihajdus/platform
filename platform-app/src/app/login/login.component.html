@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+	<form [formGroup]="profileForm" (ngSubmit)="login()">
 		<div class="form-group">
 			<label for="email">email</label>
 			<input id="email" class="form-control" type="email" name="email" formControlName="email" required>

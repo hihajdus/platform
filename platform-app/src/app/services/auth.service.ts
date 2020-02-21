@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  getLogin(email: string, password: string) {
-    return this.http.post<User>(`/api/login`, { email, password });
+  login(email: string, password: string) {
+    return this.http.post(`/api/login`, { email, password });
   }
 }
