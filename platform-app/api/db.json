@@ -35,7 +35,7 @@
 	"users": [
 		{
 			"email": "email@gmail.com",
-			"password": "pass"
+			"password": "$2y$12$HklFOO3J5pZ9PFGroYaqRuS9B5Od0QuJMbNxFzC1YWshFCtEMmMai"
 		}
 	]
 }

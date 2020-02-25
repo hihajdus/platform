@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
           () => {
             console.log("You are logged");
             this.router.navigateByUrl('/persons');
-          }
+          },
         )
     }
   }
