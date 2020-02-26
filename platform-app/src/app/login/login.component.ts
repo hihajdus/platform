@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   @Input()
     profileForm = this.fb.group({
-      email: ['', Validators.required, Validators.pattern('[^ @]*@[^ @]*')],
+      email: ['', [Validators.required, Validators.pattern('[^ @]*@[^ @]*')]],
       password: ['', Validators.required]
     });
 

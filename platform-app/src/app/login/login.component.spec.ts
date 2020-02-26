@@ -53,7 +53,7 @@ describe('LoginComponent', () => {
     expect(email.valid).toBeFalsy();
   });
   it('should validate email format correctly', () => {
-    email.setValue('email@gmai.com');
+    email.setValue('email@gmail.com');
     const errors = email.errors || {};
 
     expect(errors.required).toBeFalsy();
