@@ -29,7 +29,6 @@ export class PersonsService {
         .pipe(
           tap(() => {
             id += 1;
-            console.log(id);
           }),
           repeat(5),
           catchError(this.handleError)

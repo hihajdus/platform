@@ -1,4 +1,5 @@
 describe('#getPersons', () => {
+
 	it('returned observable', () => {
 		service.getPersons()
 			.subscribe(person => {
