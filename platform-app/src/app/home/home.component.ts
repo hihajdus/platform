@@ -1,15 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {
+  trigger,
+  transition,
+  state,
+  animate,
+  style,
+  AnimationEvent
+} from "@angular/animations";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
+  animations: [
+    trigger("changeText", [
+      state(
+        "changeStart",
+        style({
+          opacity: 1,
+          color: "lightgreen"
+        })
+      ),
+      state(
+        "changeEnd",
+        style({
+          opacity: 0.8,
+          color: "lightgreen"
+        })
+      ),
+      transition("changeStart => changeEnd", [
+        animate("5s")
+      ])
+    ])
+  ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+  isChange = false;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  changeText() {
+    this.isChange = !this.isChange;
   }
-
 }

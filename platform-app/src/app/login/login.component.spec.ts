@@ -10,7 +10,7 @@ describe('LoginComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
-      imports: [ ReactiveFormsModule]
+      imports: [ ReactiveFormsModule ]
     }).compileComponents();
   }));
 
@@ -28,10 +28,10 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should render form with email and password inputs', () => {
-    expect(element.querySelector('form').toBeTruthy());
+    expect(element.querySelector('#form').toBeTruthy());
     expect(element.querySelector('#email').toBeTruthy());
     expect(element.querySelector('#password').toBeTruthy());
-    expect(element.querySelector('button').toBeTruthy());
+    expect(element.querySelector('#btn').toBeTruthy());
   })
   it('should return model invalid when form is empty', () => {
     expect(component.profileForm.valid).toBeFalsy();
@@ -49,7 +49,6 @@ describe('LoginComponent', () => {
     const errors = email.errors;
 
     expect(errors.required).toBeFalsy();
-    expect(errors.required).toBeTruthy();
     expect(email.valid).toBeFalsy();
   });
   it('should validate email format correctly', () => {

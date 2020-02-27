@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   @Input()
     profileForm = this.fb.group({
@@ -22,18 +22,13 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router) { }
 
-  ngOnInit() {
-  }
-
   login() {
-    console.log('submit');
-    const val = this.profileForm.value;
+    const value = this.profileForm.value;
 
-    if (val.email && val.password) {
-      this.authService.login(val.email, val.password)
+    if (value.email && value.password) {
+      this.authService.login(value.email, value.password)
         .subscribe(
           () => {
-            console.log("You are logged");
             this.router.navigateByUrl('/persons');
           },
         )

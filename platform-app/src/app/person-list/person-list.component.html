@@ -1,5 +1,5 @@
 <div class="container persons">
-	<h1 class="persons_header">Lists of persons</h1>
+	<h1 class="persons__header">Lists of persons</h1>
 	<div *ngFor="let person of persons$ | async">
 		<h2>{{person.name}}</h2>
 		<a routerLink="/person/{{person.id}}">details</a>
