@@ -12,6 +12,7 @@ import { NavComponent } from './nav/nav.component';
 import { PersonListComponent } from './person-list/person-list.component';
 import { PersonDetailsComponent } from './person-details/person-details.component';
 import { PersonsService } from './services/persons.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PersonsService } from './services/persons.service';
     TodoComponent,
     NavComponent,
     PersonListComponent,
-    PersonDetailsComponent
+    PersonDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
